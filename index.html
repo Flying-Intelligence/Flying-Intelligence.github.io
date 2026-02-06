@@ -34,6 +34,8 @@
     <![endif]-->
     <!-- Add Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Add Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <style>
         /* Add the hover effect */
         .social-icons {
@@ -62,6 +64,210 @@
             transform: scale(1.2);
             color: black;
             /* Keep color black on hover */
+        }
+
+        /* Chart styles */
+        .research-charts-wrapper {
+            margin: 40px 0;
+        }
+
+        .research-charts-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .research-chart-item {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: box-shadow 0.2s, transform 0.2s;
+            flex: 0 0 280px;
+        }
+
+        .research-chart-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .research-chart-canvas-wrapper {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+        }
+
+        .research-chart-item-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin: 0 0 3px 0;
+            line-height: 1.3;
+        }
+
+        .research-chart-item-subtitle {
+            font-size: 12px;
+            color: #999;
+            margin: 0;
+        }
+
+        .research-chart-info {
+            flex: 1;
+        }
+
+        .research-chart-item canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        @media (max-width: 1200px) {
+            .research-chart-item {
+                flex: 0 0 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .research-chart-item {
+                flex: 0 0 100%;
+                padding: 12px;
+                gap: 12px;
+            }
+
+            .research-chart-canvas-wrapper {
+                width: 50px;
+                height: 50px;
+            }
+
+            .research-chart-item-title {
+                font-size: 13px;
+            }
+
+            .research-chart-item-subtitle {
+                font-size: 11px;
+            }
+        }
+
+        .research-charts-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+
+        .research-charts-subtitle {
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Research Dropdown Container */
+        .research-dropdown-container {
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            min-height: 0;
+        }
+
+        /* Research Dropdown Styles */
+        .research-dropdown {
+            display: none;
+            position: absolute;
+            background: #ffffff;
+            border-top: 3px solid #FF6384;
+            border-radius: 10px;
+            padding: 20px 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            animation: dropdownSlide 0.2s ease-out;
+            max-width: 280px;
+            width: 280px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .research-dropdown.show {
+            display: block;
+        }
+
+        @keyframes dropdownSlide {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
+
+        .research-dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .research-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .research-dropdown-item:hover {
+            background-color: #f9f9f9;
+            transform: translateX(3px);
+        }
+
+        .research-dropdown-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: white;
+            font-size: 14px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .research-dropdown-text {
+            flex: 1;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .research-dropdown-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 3px;
+        }
+
+        .research-dropdown-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .research-dropdown-item {
+                padding: 10px 12px;
+            }
+
+            .research-dropdown-value {
+                font-size: 16px;
+            }
         }
     </style>
 
@@ -193,6 +399,77 @@
             </div>
             <div class="item"
                 style="background-image: url('files/images/4.png'); background-size: cover; background-position: center; height: 60vh; min-height: 300px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Fingerprint Section -->
+    <div class="site-section" style="background: #f8f9fa; padding: 60px 0;">
+        <div class="container">
+            <div class="section-title" style="margin-bottom:30px; text-align: center;">
+                <h2>Fingerprint</h2>
+            </div>
+            <div class="research-charts-wrapper">
+                <div class="research-charts-subtitle" style="text-align: center; margin-bottom: 30px;">Research
+                    direction distribution - Percentage of research focus in each direction</div>
+                <div class="research-charts-grid">
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-ad"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Autonomous Driving</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-mlm"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Multimodal AI & LLMs</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-gm"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Generative Models</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-vqa"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Video Quality Assessment</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-eai"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Embodied AI</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-other"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Other Research</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shared Dropdown Container -->
+                <div id="researchDropdownContainer" class="research-dropdown-container"></div>
             </div>
         </div>
     </div>
@@ -977,6 +1254,7 @@
     <script src="js/jquery.mb.YTPlayer.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="js/research-chart.js"></script>
 
     <!-- Twitter Timeline Widget -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
