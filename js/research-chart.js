@@ -70,8 +70,23 @@ const researchData = [
 
 // Initialize all research direction charts
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the shared dropdown container
-    const dropdownContainer = document.getElementById('researchDropdownContainer');
+    // Get or create the shared dropdown container
+    let dropdownContainer = document.getElementById('researchDropdownContainer');
+
+    // If container doesn't exist, create it
+    if (!dropdownContainer) {
+        dropdownContainer = document.createElement('div');
+        dropdownContainer.id = 'researchDropdownContainer';
+        dropdownContainer.className = 'research-dropdown-container';
+
+        // Try to find the research charts wrapper or body and insert before end
+        const chartsWrapper = document.querySelector('.research-charts-wrapper');
+        if (chartsWrapper) {
+            chartsWrapper.appendChild(dropdownContainer);
+        } else {
+            document.body.appendChild(dropdownContainer);
+        }
+    }
 
     researchData.forEach(function (data) {
         const element = document.getElementById(data.id);
@@ -205,7 +220,9 @@ function showResearchDropdown(data, container, chartItem) {
 
 // Clear dropdown
 function clearDropdown(container) {
-    container.innerHTML = '';
+    if (container) {
+        container.innerHTML = '';
+    }
 }
 
 // Handle dropdown item click (prepare for future hyperlink feature)
