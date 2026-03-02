@@ -291,11 +291,11 @@
                 <div class="row align-items-center">
                     <!-- <div class="col-12 col-lg-6 d-flex"> -->
                     <img src="./TACO_LOGO.png" width="25%" />
-                    <a class="site-logo" style="margin-left: 240px;">
+                    <a class="site-logo" style="margin-left: 390px;">
                         <div style="font-size: 60px; font-weight: bold;">
                             <b style="color: rgb(150, 0, 0)"></b>飞行智能社区
                         </div>
-                        <div style="font-size: 40px; margin-left: 48px;">
+                        <div style="font-size: 40px; margin-left: 47px;">
                             <b style="color: rgb(80, 0, 0)"></b>Flying Intelligence
                         </div>
                     </a>
@@ -403,6 +403,77 @@
         </div>
     </div>
 
+    <!-- Fingerprint Section -->
+    <div class="site-section" style="background: #f8f9fa; padding: 60px 0;">
+        <div class="container">
+            <div class="section-title" style="margin-bottom:30px; text-align: center;">
+                <h2>Fingerprint</h2>
+            </div>
+            <div class="research-charts-wrapper">
+                <div class="research-charts-subtitle" style="text-align: center; margin-bottom: 30px;">Research
+                    direction distribution - Percentage of research focus in each direction</div>
+                <div class="research-charts-grid">
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-ad"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Autonomous Driving</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-mlm"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Multimodal AI & LLMs</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-gm"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Generative Models</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-vqa"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Video Quality Assessment</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-eai"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Embodied AI</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                    <div class="research-chart-item">
+                        <div class="research-chart-canvas-wrapper">
+                            <canvas id="chart-other"></canvas>
+                        </div>
+                        <div class="research-chart-info">
+                            <div class="research-chart-item-title">Other Research</div>
+                            <div class="research-chart-item-subtitle">Computer Science</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shared Dropdown Container -->
+                <div id="researchDropdownContainer" class="research-dropdown-container"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Minimal Recent Works section (only this kept below carousel) -->
     <div class="site-section" style="padding: 40px 0;">
         <div class="container">
@@ -413,8 +484,8 @@
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <div class="card h-100 shadow-sm">
-                            <img class="card-img-top" src="https://via.placeholder.com/800x200?text=Paper+1"
-                                alt="UAVs meet LLMs Paper" style="height: 200px; object-fit: cover;">
+                            <img class="card-img-top" src="files/images/UAVS.png" alt="UAVs meet LLMs Paper"
+                                style="height: 275px; object-fit: cover;">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title"><a
                                         href="https://www.sciencedirect.com/science/article/pii/S1566253525002313"
@@ -483,77 +554,6 @@
                             <p class="card-text small text-muted mb-0">作者1，作者2，作者3，作者4，作者5，作者6</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fingerprint Section -->
-        <div class="site-section" style="background: #f8f9fa; padding: 60px 0;">
-            <div class="container">
-                <div class="section-title" style="margin-bottom:30px; text-align: center;">
-                    <h2>Fingerprint</h2>
-                </div>
-                <div class="research-charts-wrapper">
-                    <div class="research-charts-subtitle" style="text-align: center; margin-bottom: 30px;">Research
-                        direction distribution - Percentage of research focus in each direction</div>
-                    <div class="research-charts-grid">
-                        <div class="research-chart-item">
-                            <div class="research-chart-canvas-wrapper">
-                                <canvas id="chart-ad"></canvas>
-                            </div>
-                            <div class="research-chart-info">
-                                <div class="research-chart-item-title">Autonomous Driving</div>
-                                <div class="research-chart-item-subtitle">Computer Science</div>
-                            </div>
-                        </div>
-                        <div class="research-chart-item">
-                            <div class="research-chart-canvas-wrapper">
-                                <canvas id="chart-mlm"></canvas>
-                            </div>
-                            <div class="research-chart-info">
-                                <div class="research-chart-item-title">Multimodal AI & LLMs</div>
-                                <div class="research-chart-item-subtitle">Computer Science</div>
-                            </div>
-                        </div>
-                        <div class="research-chart-item">
-                            <div class="research-chart-canvas-wrapper">
-                                <canvas id="chart-gm"></canvas>
-                            </div>
-                            <div class="research-chart-info">
-                                <div class="research-chart-item-title">Generative Models</div>
-                                <div class="research-chart-item-subtitle">Computer Science</div>
-                            </div>
-                        </div>
-                        <div class="research-chart-item">
-                            <div class="research-chart-canvas-wrapper">
-                                <canvas id="chart-vqa"></canvas>
-                            </div>
-                            <div class="research-chart-info">
-                                <div class="research-chart-item-title">Video Quality Assessment</div>
-                                <div class="research-chart-item-subtitle">Computer Science</div>
-                            </div>
-                        </div>
-                        <div class="research-chart-item">
-                            <div class="research-chart-canvas-wrapper">
-                                <canvas id="chart-eai"></canvas>
-                            </div>
-                            <div class="research-chart-info">
-                                <div class="research-chart-item-title">Embodied AI</div>
-                                <div class="research-chart-item-subtitle">Computer Science</div>
-                            </div>
-                        </div>
-                        <div class="research-chart-item">
-                            <div class="research-chart-canvas-wrapper">
-                                <canvas id="chart-other"></canvas>
-                            </div>
-                            <div class="research-chart-info">
-                                <div class="research-chart-item-title">Other Research</div>
-                                <div class="research-chart-item-subtitle">Computer Science</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Shared Dropdown Container -->
-                    <div id="researchDropdownContainer" class="research-dropdown-container"></div>
                 </div>
             </div>
         </div>
