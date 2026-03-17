@@ -5,7 +5,7 @@ const papers = [
         url: "https://www.sciencedirect.com/science/article/pii/S1566253525002313",
         img: "files/images/UAVS.png",
     authors: '<a href="group.html#yonglin-tian">Yonglin Tian</a>, Fei Lin, Yiduo Li, Tengchao Zhang, <a href="group.html#qiyao-zhang">Qiyao Zhang</a>, Xuan Fu, Jun Huang, Xingyuan Dai, Yutong Wang, Chunwei Tian, Bai Li, Yisheng Lv, Levente Kovács, Fei-Yue Wang',
-    tags: ["Low-altitude Perception", "Low-altitude Coordination", "Low-altitude Control", "Low-altitude Maneuvering", "Low-altitude Operation"]
+    tags: ["Low-altitude Perception", "Low-altitude Coordination", "Low-altitude Control", "Low-altitude Maneuvering"]
     },
     {
         title: "CogRail: Benchmarking VLMs in Cognitive Intrusion Perception for Intelligent Railway Transportation Systems",
