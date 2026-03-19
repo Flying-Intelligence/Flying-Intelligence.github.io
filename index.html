@@ -209,7 +209,7 @@
 
         .site-navbar .site-menu {
             display: flex;
-            gap: 1.5rem;
+            gap: 2.5rem;
             margin: 0;
             padding: 0;
             list-style: none;
@@ -222,24 +222,31 @@
         }
 
         .site-navbar .site-menu .nav-link {
-            padding: 0;
-            color: #333;
-            font-size: 15px;
-            font-weight: 500;
-            text-decoration: none;
+            padding: 0 !important;
+            margin: 0 !important;
+            color: #333 !important;
+            font-size: 17px;
+            font-weight: 400;
+            text-decoration: none !important;
             display: block;
-            transition: color 0.2s;
             white-space: nowrap;
-        }
-
-        .site-navbar .site-menu .nav-link:hover {
-            color: #8c0000;
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            cursor: pointer;
+            line-height: 1.2;
         }
 
         .site-navbar .site-menu li.active .nav-link {
-            color: #8c0000;
-            border-bottom: 2px solid #8c0000;
-            padding-bottom: 8px;
+            color: #333 !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            border-bottom: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
         }
 
         @media (max-width: 768px) {
