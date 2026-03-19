@@ -23,12 +23,20 @@ function renderPapers() {
     let html = '';
     papers.forEach(paper => {
         html += `
-            <div class='card h-100 shadow-sm mb-3 paper-card'>
-                ${paper.img ? `<img class='card-img-top' src='${paper.img}' alt='${paper.title}' style='height: 275px; object-fit: cover;'>` : ''}
-                <div class='card-body d-flex flex-column'>
-                    <h5 class='card-title'><a href='${paper.url}' target='_blank'>${paper.title}</a></h5>
-                    ${paper.tags.map(t => `<span class='badge' style='background:${tagColors[t] || '#888'};color:#fff;font-size:1em;margin-bottom:8px;margin-right:4px;'>${t}</span>`).join('')}
-                    <p class='card-text small text-muted mb-0'>${paper.authors}</p>
+            <div class='paper-achievement-card mb-5'>
+                <div class='paper-achievement-row'>
+                    <div class='paper-achievement-left'>
+                        <h5 class='paper-title'><a href='${paper.url}' target='_blank'>${paper.title}</a></h5>
+                    </div>
+                    <div class='paper-achievement-right'>
+                        ${paper.img ? `<div class='paper-image-wrapper'><img src='${paper.img}' alt='${paper.title}' class='paper-architecture-img'></div>` : '<div class="paper-image-placeholder">No Image</div>'}
+                        <div class='paper-achievement-info'>
+                            <div class='paper-tags'>
+                                ${paper.tags.map(t => `<span class='badge' style='background:${tagColors[t] || '#888'};color:#fff;font-size:0.85em;padding:4px 8px;margin-right:6px;margin-bottom:6px;display:inline-block;'>${t}</span>`).join('')}
+                            </div>
+                            <p class='paper-authors'>${paper.authors}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;

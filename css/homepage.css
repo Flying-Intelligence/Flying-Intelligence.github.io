@@ -19,6 +19,11 @@
     padding: 40px 0;
 }
 
+.recent-achievements-section .container {
+    max-width: 100%;
+    padding: 0;
+}
+
 /* Section Titles */
 .section-title-centered {
     margin-bottom: 30px;
@@ -32,9 +37,9 @@
 
 /* Paper Container Styles */
 .papers-container {
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
     color: rgb(68, 68, 68);
+    padding: 0 20px;
 }
 
 /* Research Chart Percent Display */
@@ -474,4 +479,164 @@ a.text-decoration-none {
 .paper-card .card-img-top {
     height: 300px !important;
     object-fit: cover !important;
+}
+
+/* Recent Achievements - New Layout */
+.paper-achievement-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    transition: box-shadow 0.3s ease;
+}
+
+.paper-achievement-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.paper-achievement-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.paper-achievement-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.paper-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.paper-title a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.paper-title a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+.paper-achievement-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.paper-image-wrapper {
+    width: 100%;
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.paper-architecture-img {
+    max-width: 100%;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.paper-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    border-radius: 8px;
+}
+
+.paper-achievement-info {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.paper-tags {
+    margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.paper-tags .badge {
+    font-size: 0.85rem !important;
+}
+
+.paper-authors {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.paper-authors a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.paper-authors a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .paper-achievement-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .paper-achievement-left {
+        padding-right: 0;
+    }
+
+    .paper-image-wrapper {
+        min-height: 250px;
+    }
+
+    .paper-architecture-img {
+        max-height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .paper-achievement-card {
+        padding: 16px;
+    }
+
+    .paper-achievement-row {
+        gap: 16px;
+    }
+
+    .paper-title {
+        font-size: 1.1rem;
+    }
+
+    .paper-image-wrapper {
+        min-height: 200px;
+    }
+
+    .paper-achievement-info {
+        padding: 12px;
+    }
+
+    .paper-authors {
+        font-size: 0.9rem;
+    }
 }
