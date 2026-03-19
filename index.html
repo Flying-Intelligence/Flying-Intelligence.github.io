@@ -163,6 +163,174 @@
             }
         }
 
+        /* Stanford AI Lab Hexagon Styles */
+        .community-intro-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .community-intro-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .community-intro-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .community-intro-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: #8c0000;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .community-intro-subtitle {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .community-intro-text {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .hexagon-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+        }
+
+        .hexagon-grid {
+            position: relative;
+            width: 380px;
+            height: 340px;
+        }
+
+        .hexagon {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            cursor: pointer;
+            overflow: hidden;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .hexagon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hexagon:hover {
+            transform: scale(1.08);
+            filter: brightness(1.1);
+        }
+
+        /* 中心 */
+        .hexagon-center {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+
+        /* 上 */
+        .hexagon-top {
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* 上左 */
+        .hexagon-top-left {
+            left: 0;
+            top: 20%;
+            z-index: 1;
+        }
+
+        /* 下左 */
+        .hexagon-bottom-left {
+            left: 0;
+            bottom: 20%;
+            z-index: 1;
+        }
+
+        /* 下 */
+        .hexagon-bottom {
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        @media (max-width: 1200px) {
+            .community-intro-wrapper {
+                gap: 40px;
+            }
+
+            .community-intro-title {
+                font-size: 42px;
+            }
+
+            .community-intro-text {
+                font-size: 15px;
+            }
+
+            .hexagon-grid {
+                width: 320px;
+                height: 280px;
+            }
+
+            .hexagon {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .community-intro-section {
+                padding: 60px 0;
+            }
+
+            .community-intro-wrapper {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .community-intro-title {
+                font-size: 36px;
+            }
+
+            .hexagon-container {
+                width: 100%;
+            }
+
+            .hexagon-grid {
+                width: 100%;
+                max-width: 300px;
+                height: 240px;
+                margin: 0 auto;
+            }
+
+            .hexagon {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
         .research-charts-title {
             font-size: 20px;
             font-weight: bold;
@@ -406,14 +574,43 @@
 
     </div>
 
+    <!-- Community Introduction Section with Hexagons -->
+    <div class="community-intro-section">
+        <div class="container">
+            <div class="community-intro-wrapper">
+                <!-- Left Content -->
+                <div class="community-intro-content">
+                    <div class="community-intro-title">Flying<br>Intelligence</div>
+                    <div class="community-intro-subtitle">飞行智能社区</div>
+                    <div class="community-intro-text">
+                        The Flying Intelligence Community is a center of excellence for artificial intelligence research
+                        in aerial and autonomous systems.
+                        We focus on cutting-edge research, theoretical advancement, and practical applications in
+                        low-altitude perception, maneuvering,
+                        operation, and coordination since our founding.
+                    </div>
+                </div>
 
-    <div class="site-blocks-cover">
-        <div class="hero-slide owl-carousel">
-            <div class="item"
-                style="background-image: url('files/images/1.png'); background-size: cover; background-position: center; height: 60vh; min-height: 300px;">
-            </div>
-            <div class="item"
-                style="background-image: url('files/images/4.png'); background-size: cover; background-position: center; height: 60vh; min-height: 300px;">
+                <!-- Right Hexagon Grid -->
+                <div class="hexagon-container">
+                    <div class="hexagon-grid">
+                        <div class="hexagon hexagon-center">
+                            <img src="files/images/1.png" alt="Center">
+                        </div>
+                        <div class="hexagon hexagon-top">
+                            <img src="files/images/2.png" alt="Top">
+                        </div>
+                        <div class="hexagon hexagon-top-left">
+                            <img src="files/images/3.png" alt="Top Left">
+                        </div>
+                        <div class="hexagon hexagon-bottom-left">
+                            <img src="files/images/4.png" alt="Bottom Left">
+                        </div>
+                        <div class="hexagon hexagon-bottom">
+                            <img src="files/images/5.png" alt="Bottom">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
