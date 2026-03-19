@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Add Chart.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <!-- Plyr Video Player -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <!-- 统一数据源，必须在所有内联脚本前加载 -->
     <script src="js/papers-data.js"></script>
     <script src="js/tag-colors.js"></script>
@@ -103,14 +105,8 @@
                 <!-- Left Content -->
                 <div class="community-intro-content">
                     <div class="community-intro-title">Flying<br>Intelligence</div>
-                    <div class="community-intro-subtitle">飞行智能社区</div>
-                    <div class="community-intro-text">
-                        The Flying Intelligence Community is a center of excellence for artificial intelligence research
-                        in aerial and autonomous systems.
-                        We focus on cutting-edge research, theoretical advancement, and practical applications in
-                        low-altitude perception, maneuvering,
-                        operation, and coordination since our founding.
-                    </div>
+                    <!-- <div class="community-intro-subtitle">飞行智能社区</div> -->
+                    <div class="community-intro-slogan">Low Altitude,<br>High Intelligence</div>
                 </div>
 
                 <!-- Right Hexagon Grid -->
@@ -144,19 +140,19 @@
                 <h2>Research Direction Distribution</h2>
             </div>
             <div class="research-charts-wrapper">
-                <div class="research-charts-subtitle research-charts-centered">Research
-                    direction distribution - Percentage of research focus in each direction</div>
                 <div class="research-charts-grid">
                     <div class="research-chart-item">
                         <div class="research-chart-canvas-wrapper">
                             <canvas id="chart-perception" width="90" height="90"></canvas>
                         </div>
                         <div class="research-chart-info">
-                            <a href="direction_papers.html?direction=Low-altitude%20Perception"
-                                class="text-decoration-none">
-                                <div class="research-chart-item-title">Low-altitude Perception</div>
-                            </a>
-                            <div id="percent-perception" class="research-chart-percent">
+                            <div class="research-chart-item-title">Low-altitude Perception</div>
+                            <div class="research-chart-percent-btn-wrapper">
+                                <div id="percent-perception" class="research-chart-percent"></div>
+                                <a href="direction_papers.html?direction=Low-altitude%20Perception"
+                                    class="research-chart-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -165,11 +161,13 @@
                             <canvas id="chart-maneuver" width="90" height="90"></canvas>
                         </div>
                         <div class="research-chart-info">
-                            <a href="direction_papers.html?direction=Low-altitude%20Maneuvering"
-                                class="text-decoration-none">
-                                <div class="research-chart-item-title">Low-altitude Maneuvering</div>
-                            </a>
-                            <div id="percent-maneuver" class="research-chart-percent">
+                            <div class="research-chart-item-title">Low-altitude Maneuvering</div>
+                            <div class="research-chart-percent-btn-wrapper">
+                                <div id="percent-maneuver" class="research-chart-percent"></div>
+                                <a href="direction_papers.html?direction=Low-altitude%20Maneuvering"
+                                    class="research-chart-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -178,11 +176,13 @@
                             <canvas id="chart-control" width="90" height="90"></canvas>
                         </div>
                         <div class="research-chart-info">
-                            <a href="direction_papers.html?direction=Low-altitude%20Operation"
-                                class="text-decoration-none">
-                                <div class="research-chart-item-title">Low-altitude Operation</div>
-                            </a>
-                            <div id="percent-control" class="research-chart-percent">
+                            <div class="research-chart-item-title">Low-altitude Operation</div>
+                            <div class="research-chart-percent-btn-wrapper">
+                                <div id="percent-control" class="research-chart-percent"></div>
+                                <a href="direction_papers.html?direction=Low-altitude%20Operation"
+                                    class="research-chart-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -191,11 +191,13 @@
                             <canvas id="chart-coordination" width="90" height="90"></canvas>
                         </div>
                         <div class="research-chart-info">
-                            <a href="direction_papers.html?direction=Low-altitude%20Coordination"
-                                class="text-decoration-none">
-                                <div class="research-chart-item-title">Low-altitude Coordination</div>
-                            </a>
-                            <div id="percent-coordination" class="research-chart-percent">
+                            <div class="research-chart-item-title">Low-altitude Coordination</div>
+                            <div class="research-chart-percent-btn-wrapper">
+                                <div id="percent-coordination" class="research-chart-percent"></div>
+                                <a href="direction_papers.html?direction=Low-altitude%20Coordination"
+                                    class="research-chart-arrow-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -256,6 +258,9 @@
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
     <script src="js/jquery.mb.YTPlayer.min.js"></script>
+
+    <!-- Plyr Player Script -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 
     <script src="js/main.js"></script>
     <script src="js/research-chart.js"></script>

@@ -28,17 +28,17 @@ function renderPapers() {
                 <div class='paper-achievement-row'>
                     <div class='paper-achievement-left'>
                         <h5 class='paper-title'>${paper.title}</h5>
+                        ${paper.date ? `<p class='paper-date'>${paper.date}</p>` : ''}
                         <a href='${paper.url}' target='_blank' class='paper-learn-more-btn'>Learn More</a>
                     </div>
                     <div class='paper-achievement-right'>
                         <div class='paper-image-container' id='${demoId}--content' ${paper.video ? "style='display:none;'" : ''}> 
                             ${paper.img ? `<div class='paper-image-wrapper'><img src='${paper.img}' alt='${paper.title}' class='paper-architecture-img'></div>` : '<div class="paper-image-placeholder">No Image</div>'}
                         </div>
-                        ${paper.video ? `<div class='paper-video-container' id='${demoId}--video'><video autoplay loop muted controls class='paper-demo-video'><source src='${paper.video}' type='video/mp4'>Your browser does not support the video tag.</video></div>` : ''}
+                        ${paper.video ? `<div class='paper-video-container' id='${demoId}--video'><video playsinline autoplay muted loop class='paper-demo-video' data-plyr-provider='html5'><source src='${paper.video}' type='video/mp4'>Your browser does not support the video tag.</video></div>` : ''}
                         <div class='paper-achievement-info'>
-                            ${paper.date ? `<p class='paper-date'>${paper.date}</p>` : ''}
                             <div class='paper-tags'>
-                                ${paper.tags.map(t => `<span class='badge' style='background:${tagColors[t] || '#888'};color:#fff;font-size:0.85em;padding:4px 8px;margin-right:6px;margin-bottom:6px;display:inline-block;'>${t}</span>`).join('')}
+                                ${paper.tags.map(t => `<a href='direction_papers.html?direction=${encodeURIComponent(t)}' class='paper-tag-btn' style='background:${tagColors[t] || '#888'};'>${t}</a>`).join('')}
                             </div>
                             <p class='paper-authors'>${paper.authors}</p>
                             ${paper.video ? `<button class='paper-demo-btn' onclick="toggleDemo('${demoId}')">📐 Architecture</button>` : ''}
@@ -49,6 +49,14 @@ function renderPapers() {
         `;
     });
     container.innerHTML = html;
+
+    // Initialize Plyr for all videos
+    const players = Array.from(document.querySelectorAll('.paper-demo-video')).map(p => new Plyr(p, {
+        autoplay: true,
+        loop: { active: true },
+        muted: true,
+        controls: []
+    }));
 }
 
 // Toggle between image and video demo

@@ -11,12 +11,28 @@
 
 /* Section Spacing */
 .research-direction-section {
-    background: #f8f9fa;
-    padding: 60px 0;
+    background: transparent;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.research-direction-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    pointer-events: none;
 }
 
 .recent-achievements-section {
     padding: 40px 0;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 .recent-achievements-section .container {
@@ -26,13 +42,30 @@
 
 /* Section Titles */
 .section-title-centered {
-    margin-bottom: 30px;
+    margin-bottom: 45px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title-centered h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1a3a52;
+    letter-spacing: -1px;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .research-charts-centered {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 300;
+    letter-spacing: 0.3px;
 }
 
 /* Paper Container Styles */
@@ -45,10 +78,11 @@
 /* Research Chart Percent Display */
 .research-chart-percent {
     text-align: center;
-    font-size: 1.0em;
-    color: #666;
-    font-weight: bold;
-    margin-top: 2px;
+    font-size: 1.15em;
+    color: #8c0000;
+    font-weight: 700;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
 }
 
 /* Link Styles */
@@ -86,71 +120,82 @@ a.text-decoration-none {
 /* Research Charts Styles */
 .research-charts-wrapper {
     margin: 40px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .research-charts-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 40px 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     justify-items: center;
     align-items: center;
-    margin: 40px auto 0 auto;
-    max-width: 700px;
+    margin: 60px auto 0 auto;
+    max-width: 100%;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .research-chart-item {
-    background: #ffffff;
-    padding: 32px 45px 32px 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+    padding: 20px 16px;
     border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(200, 200, 200, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 12px;
     cursor: pointer;
-    transition: box-shadow 0.2s, transform 0.2s;
-    width: 320px;
-    height: 120px;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    min-height: 80px;
     font-size: 1.25rem;
     position: relative;
-}
-
-.research-chart-item::after {
-    content: '→';
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(12px);
-    font-size: 1.5em;
-    color: #8c0000;
-    font-weight: bold;
-    transition: transform 0.2s;
+    overflow: visible;
 }
 
 .research-chart-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+    border-color: rgba(140, 0, 0, 0.15);
 }
 
-.research-chart-item:hover::after {
-    transform: translateY(12px) translateX(5px);
+.research-chart-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.research-chart-item::after {
+    display: none;
 }
 
 .research-chart-canvas-wrapper {
     flex-shrink: 0;
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     position: relative;
     z-index: 10;
 }
 
 .research-chart-item-title {
-    font-size: 1.0em;
-    font-weight: bold;
-    color: #333;
-    margin: 0 0 3px 0;
-    line-height: 1.3;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: #1a3a52;
+    margin: 0;
+    line-height: 1.25;
     text-align: center;
+    letter-spacing: 0.2px;
 }
 
 .research-chart-item-subtitle {
@@ -161,6 +206,39 @@ a.text-decoration-none {
 
 .research-chart-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.research-chart-percent-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.research-chart-arrow-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #0066cc;
+    color: #fff;
+    font-size: 0.75em;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.2);
+}
+
+.research-chart-arrow-btn:hover {
+    background: #0052a3;
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 102, 204, 0.35);
+    color: #fff;
 }
 
 .research-chart-item canvas {
@@ -170,28 +248,52 @@ a.text-decoration-none {
 
 @media (max-width: 1200px) {
     .research-chart-item {
-        flex: 0 0 280px;
+        max-width: 160px;
+    }
+
+    .research-charts-grid {
+        gap: 25px;
     }
 }
 
 @media (max-width: 768px) {
+    .research-direction-section {
+        padding: 60px 0;
+    }
+
+    .section-title-centered h2 {
+        font-size: 2.2rem;
+    }
+
+    .research-charts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 10px;
+    }
+
     .research-chart-item {
-        flex: 0 0 100%;
-        padding: 12px;
-        gap: 12px;
+        max-width: 100%;
+        padding: 16px 12px;
+        gap: 8px;
     }
 
     .research-chart-canvas-wrapper {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     .research-chart-item-title {
-        font-size: 13px;
+        font-size: 0.7rem;
     }
 
-    .research-chart-item-subtitle {
-        font-size: 11px;
+    .research-chart-percent {
+        font-size: 0.95em;
+    }
+
+    .research-chart-arrow-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 0.65em;
     }
 }
 
@@ -199,6 +301,7 @@ a.text-decoration-none {
 .community-intro-section {
     padding: 120px 0;
     background: #fff;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 .community-intro-wrapper {
@@ -225,6 +328,15 @@ a.text-decoration-none {
     color: #333;
     margin-bottom: 24px;
     line-height: 1.6;
+}
+
+.community-intro-slogan {
+    font-size: 26px;
+    color: #0066cc;
+    margin-bottom: 32px;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .community-intro-text {
@@ -607,7 +719,7 @@ a.text-decoration-none {
 .paper-date {
     font-size: 0.95rem;
     color: #999;
-    margin: 0 0 12px 0;
+    margin: 8px 0 16px 0;
     font-weight: 500;
 }
 
@@ -647,11 +759,15 @@ a.text-decoration-none {
 .paper-video-container {
     width: 100%;
     background: transparent;
-    border-radius: 12px;
+    border-radius: 24px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.paper-video-container .plyr {
+    border-radius: 24px;
 }
 
 .paper-demo-video {
@@ -659,7 +775,6 @@ a.text-decoration-none {
     height: auto;
     width: auto;
     display: block;
-    border-radius: 12px;
 }
 
 .paper-tags {
@@ -671,6 +786,27 @@ a.text-decoration-none {
 
 .paper-tags .badge {
     font-size: 1rem !important;
+}
+
+.paper-tag-btn {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.85em;
+    padding: 6px 12px;
+    margin-right: 4px;
+    margin-bottom: 6px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.paper-tag-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #fff;
 }
 
 .paper-authors {
