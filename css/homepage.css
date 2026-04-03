@@ -368,31 +368,23 @@ a.text-decoration-none {
     overflow: hidden;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.hexagon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hexagon:hover {
-    transform: scale(1.08);
-    filter: brightness(1.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hexagon-center {
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: -105px;
+    margin-top: -105px;
     z-index: 3;
 }
 
 .hexagon-top {
     left: 50%;
     top: 0;
-    transform: translateX(-50%);
+    margin-left: -105px;
     z-index: 2;
 }
 
@@ -411,8 +403,20 @@ a.text-decoration-none {
 .hexagon-bottom {
     left: 50%;
     bottom: 0;
-    transform: translateX(-50%);
+    margin-left: -105px;
     z-index: 2;
+}
+
+.hexagon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hexagon:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
 }
 
 @media (max-width: 1200px) {
