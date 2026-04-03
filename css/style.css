@@ -33,6 +33,13 @@
   border-radius: 16px !important;
   transition: box-shadow 0.25s, transform 0.25s;
   background: #fff;
+  overflow: hidden;
+}
+
+.paper-card .card-img-top {
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .paper-card:hover,
