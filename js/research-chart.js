@@ -3,7 +3,7 @@
 const directionMap = [
     { id: 'chart-perception', tag: 'Low-altitude Perception', name: 'Low-altitude Perception' },
     { id: 'chart-maneuver', tag: 'Low-altitude Maneuvering', name: 'Low-altitude Maneuvering' },
-    { id: 'chart-control', tag: 'Low-altitude Operation', name: 'Low-altitude Operation' },
+    { id: 'chart-operation', tag: 'Low-altitude Operation', name: 'Low-altitude Operation' },
     { id: 'chart-coordination', tag: 'Low-altitude Coordination', name: 'Low-altitude Coordination' }
 ];
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var percentId = '';
             if (d.id === 'chart-perception') percentId = 'percent-perception';
             if (d.id === 'chart-maneuver') percentId = 'percent-maneuver';
-            if (d.id === 'chart-control') percentId = 'percent-control';
+            if (d.id === 'chart-operation') percentId = 'percent-operation';
             if (d.id === 'chart-coordination') percentId = 'percent-coordination';
             if (percentId) {
                 var percentDiv = document.getElementById(percentId);
