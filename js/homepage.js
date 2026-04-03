@@ -28,6 +28,7 @@ function renderPapers() {
                 <div class='paper-achievement-row'>
                     <div class='paper-achievement-left'>
                         <h5 class='paper-title'>${paper.title}</h5>
+                        ${paper.venue ? `<p class='paper-venue' style='font-style: italic; color: #666; margin-bottom: 5px;'>${paper.venue}</p>` : ''}
                         ${paper.date ? `<p class='paper-date'>${paper.date}</p>` : ''}
                         <a href='${paper.url}' target='_blank' class='paper-learn-more-btn'>Learn More</a>
                     </div>

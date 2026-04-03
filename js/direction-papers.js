@@ -28,6 +28,7 @@ function renderPapers(direction) {
                 ${paper.img ? `<img class="card-img-top" src="${paper.img}" alt="${paper.title}" style="height: 350px; object-fit: cover;">` : ''}
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title"><a href="${paper.url}" target="_blank">${paper.title}</a></h5>
+                    ${paper.venue ? `<p class="card-text mb-1" style="font-style: italic; color: #666; font-size: 0.9em;">${paper.venue}</p>` : ''}
                     <span class="badge" style="background:${typeof tagColors !== 'undefined' && tagColors[direction] ? tagColors[direction] : '#888'};color:#fff;font-size:1em;margin-bottom:8px;">${direction}</span>
                     <p class="card-text small text-muted mb-0">${paper.authors}</p>
                 </div>
