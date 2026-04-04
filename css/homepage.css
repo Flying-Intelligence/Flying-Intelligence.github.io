@@ -299,7 +299,7 @@ a.text-decoration-none {
 
 /* Community Intro Section with Hexagons */
 .community-intro-section {
-    padding: 120px 0;
+    padding: 280px 0 180px 0;
     background: #fff;
     border-bottom: 1px solid #e8e8e8;
 }
@@ -308,6 +308,9 @@ a.text-decoration-none {
     display: flex;
     align-items: center;
     gap: 90px;
+    margin-left: 150px;
+    transform: scale(1.4);
+    transform-origin: center;
 }
 
 .community-intro-content {
