@@ -1973,6 +1973,35 @@ strong {
   padding: 2rem 0;
 }
 
+.visitor-stats-section {
+  padding: 5rem 0;
+  border-top: 1px solid #eef0f2;
+}
+
+.viewer-map-container {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.viewer-map-container:hover {
+  transform: translateY(-5px);
+}
+
+.visitor-info-content h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.visitor-info-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #777;
+}
+
 .top-social a {
   color: #000;
 }

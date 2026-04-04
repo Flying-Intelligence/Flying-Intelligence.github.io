@@ -342,12 +342,31 @@ a.text-decoration-none {
 }
 
 .community-intro-slogan {
-    font-size: 26px;
+    font-size: 22px;
     color: #0066cc;
     margin-bottom: 32px;
-    line-height: 1.4;
+    line-height: 1.5;
     font-weight: 600;
     letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.community-intro-slogan .slogan-line {
+    opacity: 1;
+}
+
+.community-intro-slogan .slogan-highlight {
+    font-size: 22px;
+    color: #0066cc;
+    font-weight: 600;
+    margin-top: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.community-intro-slogan .slogan-highlight::after {
+    display: none;
 }
 
 .community-intro-text {
