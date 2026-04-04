@@ -5,12 +5,16 @@
 }
 
 .site-navbar {
-    background: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 0 !important;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 
 .site-navbar .container {
@@ -60,7 +64,7 @@
 .site-navbar .site-menu .nav-link {
     padding: 10px 25px !important;
     margin: 0 !important;
-    color: #333 !important;
+    color: rgba(51, 51, 51, 0.7) !important;
     font-size: 20px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
@@ -74,12 +78,13 @@
     cursor: pointer;
     line-height: 1.2;
     transform: none !important;
-    transition: none !important;
+    transition: color 0.3s ease !important;
 }
 
 .site-navbar .site-menu .nav-link:hover,
 .site-navbar .site-menu .nav-link:focus,
 .site-navbar .site-menu li.active .nav-link {
+    color: #000000 !important;
     transform: none !important;
     padding: 10px 25px !important;
     margin: 0 !important;
