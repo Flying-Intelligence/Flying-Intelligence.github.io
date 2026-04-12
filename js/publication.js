@@ -20,10 +20,11 @@ function renderPublicationPapers() {
     // 按时间倒序排列（papers-data.js 中通常是按顺序排的，如果需要倒序可以在这里处理）
     // 这里保持原有顺序显示
     papers.forEach((paper) => {
+        const imgPath = paper.img ? (paper.img.startsWith('http') ? paper.img : '../' + paper.img) : '';
         html += `
             <div class="col-md-12 mb-4">
                 <div class="card h-100 shadow-sm paper-card">
-                    ${paper.img ? `<img class="card-img-top" src="${paper.img}" alt="${paper.title}">` : ''}
+                    ${imgPath ? `<img class="card-img-top" src="${imgPath}" alt="${paper.title}">` : ''}
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">
                             <a href="${paper.url}" target="_blank">${paper.title}</a>

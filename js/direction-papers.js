@@ -23,9 +23,10 @@ function renderPapers(direction) {
     }
     let html = '<div class="row">';
     directionPapers.forEach(paper => {
+        const imgPath = paper.img ? (paper.img.startsWith('http') ? paper.img : '../' + paper.img) : '';
         html += `<div class="col-md-12 mb-3">
             <div class="card h-100 shadow-sm paper-card">
-                ${paper.img ? `<img class="card-img-top" src="${paper.img}" alt="${paper.title}">` : ''}
+                ${imgPath ? `<img class="card-img-top" src="${imgPath}" alt="${paper.title}">` : ''}
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title"><a href="${paper.url}" target="_blank">${paper.title}</a></h5>
                     ${paper.venue ? `<p class="card-text mb-1" style="font-style: italic; color: #666; font-size: 0.9em;">${paper.venue}</p>` : ''}
