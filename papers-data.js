@@ -10,6 +10,16 @@ const papers = [
         tags: ["Low-altitude Perception", "Low-altitude Coordination", "Low-altitude Maneuvering", "Low-altitude Operation"]
     },
     {
+        title: "UAV-Track VLA: Embodied Aerial Tracking via Vision-Language-Action Models",
+        url: "https://arxiv.org/abs/2604.02241",
+        venue: "arXiv",
+        img: "files/images/UAV-Track-VLA.png",
+        date: "Apr. 2026",
+        authors: '<a href="group.html#qiyao-zhang">Qiyao Zhang</a>, Shuhua Zheng, <a href="group.html#jianli-sun">Jianli Sun</a>, <a href="group.html#chengxiang-li">Chengxiang Li</a>, <a href="group.html#xianke-wu">Xianke Wu</a>, <a href="group.html#zihan-song">Zihan Song</a>, Zhiyong Cui, Yisheng Lv, <a href="group.html#yonglin-tian">Yonglin Tian*</a>',
+        tags: ["Low-altitude Maneuvering"],
+        // video: "files/videos/opencood-air.mp4"
+    },
+    {
         title: "OpenCOOD-Air: Prompting Heterogeneous Ground-Air Collaborative Perception with Spatial Conversion and Offset Prediction",
         url: "https://arxiv.org/abs/2603.13919",
         venue: "arXiv",
